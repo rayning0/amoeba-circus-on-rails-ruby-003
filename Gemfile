@@ -58,3 +58,5 @@ group :test, :development do
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
 end
+
+gem 'chronic' #for date and time
