@@ -12,6 +12,12 @@
   <% end %>
 
   <div class="actions">
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name %>
+    <%= f.label :talent, 'Talent' %>
+    <%= f.select :talent_id, Talent.all.collect {|talent| [talent.name, talent.id]} %>  
+
+    
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,4 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_act_path(@act) %> |
-<%= link_to 'Back', acts_path %>
+<h1>Act</h1>
+
+<table cellpadding=7>
+  <tbody>
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Date</b></td>
+        <td><b>Time</b></td>
+        <td><b>Amoebas</b></td>
+      </tr>
+      <tr>
+        <td><%= @act.name %></td>
+        <td><%= @act.date %></td>
+        <td><%= @act.time.strftime('%I:%M %P') %></td>
+        <td><% @act.amoebas.each_with_index do |amoeba, index| %>
+              <%= amoeba.name %> 
+              <% if index < @act.amoebas.size - 1 %>
+              |
+              <% end %>
+            <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= link_to 'Edit', edit_act_path(@act) %></td>
+        <td><%= link_to 'Destroy', @act, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Back', acts_path %></td>
+      </tr>
+    <br>
+  </tbody>
+</table>
+

@@ -1,4 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_amoeba_path(@amoeba) %> |
-<%= link_to 'Back', amoebas_path %>
+<h1>Amoeba</h1>
+
+<table cellpadding=7>
+  <tbody>
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Gen</b></td>
+        <td><b>Talent</b></td>
+        <td><b>Acts</b></td>
+      </tr>
+      <tr>
+        <td><%= @amoeba.name %></td>
+        <td><%= @amoeba.generation %></td>
+        <td><%= @amoeba.talent.name %></td>
+        <td><% @amoeba.acts.each_with_index do |act, index| %>
+              <%= act.name %> 
+              <% if index < @amoeba.acts.size - 1 %>
+              |
+              <% end %>
+            <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= link_to 'Edit', edit_amoeba_path(@amoeba) %></td>
+        <td><%= link_to 'Destroy', @amoeba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Back', amoebas_path %></td>
+      </tr>
+    <br>
+  </tbody>
+</table>

@@ -1,25 +1,34 @@
-<h1>Listing acts</h1>
+<h1>All Acts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
+<table cellpadding=7>
   <tbody>
+      <tr>
+        <td><b>Name</b></td>
+        <td><b>Date</b></td>
+        <td><b>Time</b></td>
+        <td><b>Amoebas</b></td>
+      </tr>
     <% @acts.each do |act| %>
       <tr>
-        <td><%= link_to 'Show', act %></td>
+        <td><%= link_to act.name, act, :class => "newlinkcolor" %></td>
+        <td><%= act.date %></td>
+        <td><%= act.time.strftime('%I:%M %P') %></td>
+        <td><% act.amoebas.each_with_index do |amoeba, index| %>
+              <%= amoeba.name %> 
+              <% if index < act.amoebas.size - 1 %>
+              |
+              <% end %>
+            <% end %>
+        </td>
+      </tr>
+      <tr>
         <td><%= link_to 'Edit', edit_act_path(act) %></td>
         <td><%= link_to 'Destroy', act, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <br>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Act', new_act_path %>

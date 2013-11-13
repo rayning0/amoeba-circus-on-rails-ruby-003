@@ -1,6 +1,6 @@
 <h1>All Amoebas</h1>
 
-<table>
+<table cellpadding=3>
   <tbody>
       <tr>
         <td><b>Name</b></td>
@@ -8,9 +8,9 @@
         <td><b>Talent</b></td>
         <td><b>Acts</b></td>
       </tr>
-      <% @amoebas.each do |amoeba| %>
+    <% @amoebas.each do |amoeba| %>
       <tr>
-        <td><%= link_to amoeba.name, amoeba %></td>
+        <td><%= link_to amoeba.name, amoeba, :class => "newlinkcolor" %></td>
         <td><%= amoeba.generation %></td>
         <td><%= amoeba.talent.name %></td>
         <td><% amoeba.acts.each_with_index do |act, index| %>

@@ -1,3 +1,17 @@
+a.toplinkcolor{
+    color: #0066ff;
+    &:hover {
+       color: #0066ff;
+     }
+   }
+
+a.newlinkcolor{
+    color: #ff0033;
+    &:hover {
+       color: #ff0033;
+     }
+   }
+
 body {
   background-color: #fff;
   color: #333;
@@ -21,7 +35,7 @@ pre {
 a {
   color: #000;
   &:visited {
-    color: #666;
+    color: #a00000;
   }
   &:hover {
     color: #fff;
