@@ -65,12 +65,7 @@ class AmoebasController < ApplicationController
   end
 
   def split
-    @amoeba.update(name: @amoeba.name + '1', generation: @amoeba.generation + 1)
-    #@amoebasplit = Amoeba.create(name: @amoeba.name + '1', generation: @amoeba.generation + 1, talent: @amoeba.talent)
-    #@amoeba.acts.each do |act|
-    #  act.amoebas << @amoeba1 << @amoeba2   # add the 2 new amoebas to all cts #of parent amoeba
-    #end
-    #@amoeba.destroy
+    @amoeba.divide
     redirect_to amoebas_path
   end
 

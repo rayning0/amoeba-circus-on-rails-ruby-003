@@ -59,4 +59,5 @@ group :test, :development do
   gem "guard-rspec"
 end
 
-gem 'chronic' #for date and time
+gem 'chronic' # for date and time
+gem 'faker' # creates fake names, telephone number, e-mail addresses, addresses, etc
