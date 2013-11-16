@@ -10,7 +10,7 @@
         <td><b>Talent</b></td>
         <td><b>Acts</b></td>
       </tr>
-    <% @amoebas.each do |amoeba| %>
+    <% @amoebas.sort_by {|amoeba| amoeba.name}.each do |amoeba| %>
       <tr>
         <td><%= link_to image_tag("pencil.png"), edit_amoeba_path(amoeba) %></td>
         <td><%= link_to image_tag('trash.png'), amoeba, method: :delete %></td>

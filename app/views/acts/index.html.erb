@@ -9,7 +9,7 @@
         <td><b>Time</b></td>
         <td><b>Amoebas</b></td>
       </tr>
-    <% @acts.each do |act| %>
+    <% @acts.sort_by {|act| act.name}.each do |act| %>
       <tr>
         <td><%= link_to image_tag("pencil.png"), edit_act_path(act) %></td>
         <td><%= link_to image_tag('trash.png'), act, method: :delete, data: { confirm: 'Are you sure?' } %></td>
