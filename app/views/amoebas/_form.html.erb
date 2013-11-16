@@ -13,11 +13,16 @@
 
   <div class="actions">
     <%= f.label :name, 'Name' %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><br>
     <%= f.label :talent, 'Talent' %>
-    <%= f.select :talent_id, Talent.all.collect {|talent| [talent.name, talent.id]} %>  
+    <%= f.select :talent_id, Talent.all.collect {|talent| [talent.name, talent.id]} %><br>
 
-    
+
+    <% @acts.each do |act| %>
+      <%= check_box_tag "amoeba[act_ids][]", act.id, @amoeba.acts.include?(act) %>
+      <%= label_tag :name, act.name %><br>
+    <% end %> 
+    <br>
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,5 +1,6 @@
 AmoebaCircusOnRailsRuby003::Application.routes.draw do
   root 'dashboard#index'
+  get 'amoebas/:id/split' => 'amoebas#split', as: :split
   resources :acts
   resources :amoebas
 

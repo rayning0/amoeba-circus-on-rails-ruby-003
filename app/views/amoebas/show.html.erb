@@ -23,9 +23,10 @@
         </td>
       </tr>
       <tr>
-        <td><%= link_to 'Edit', edit_amoeba_path(@amoeba) %></td>
-        <td><%= link_to 'Destroy', @amoeba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Back', amoebas_path %></td>
+        <td><%= link_to image_tag("pencil.png"), edit_amoeba_path(@amoeba) %></td>
+        <td><%= link_to image_tag('trash.png'), @amoeba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to image_tag('back.png'), amoebas_path %></td>
+        <td><%= link_to image_tag('split.jpg', height: 60), split_path(@amoeba) %></td>
       </tr>
     <br>
   </tbody>

@@ -3,6 +3,7 @@
 <table cellpadding=7>
   <tbody>
       <tr>
+        <td></td><td></td>
         <td><b>Name</b></td>
         <td><b>Date</b></td>
         <td><b>Time</b></td>
@@ -10,6 +11,8 @@
       </tr>
     <% @acts.each do |act| %>
       <tr>
+        <td><%= link_to image_tag("pencil.png"), edit_act_path(act) %></td>
+        <td><%= link_to image_tag('trash.png'), act, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to act.name, act, :class => "newlinkcolor" %></td>
         <td><%= act.date %></td>
         <td><%= act.time.strftime('%I:%M %P') %></td>
@@ -22,8 +25,7 @@
         </td>
       </tr>
       <tr>
-        <td><%= link_to 'Edit', edit_act_path(act) %></td>
-        <td><%= link_to 'Destroy', act, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
     <br>
